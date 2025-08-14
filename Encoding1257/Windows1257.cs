@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace Encoding1257;
 
@@ -6,7 +7,8 @@ namespace Encoding1257;
 /// <summary>
 /// Provides Windows-1257 (Baltic) encoding support.
 /// </summary>
-public sealed class Windows1257 : Encoding
+[Generated.Generated1257ToUnicodeMap("byteToCharMap")]
+public sealed partial class Windows1257 : Encoding
 {
     private static readonly Lazy<Windows1257> _instance = new(() => new Windows1257(), LazyThreadSafetyMode.ExecutionAndPublication);
     public static Windows1257 Instance => _instance.Value;
@@ -97,6 +99,7 @@ public sealed class Windows1257 : Encoding
     /// <summary>
     /// Converts a Unicode character to a Windows-1257 byte.
     /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static byte GetByte(char chr)
     {
         if (encMap.TryGetValue(chr, out var b))
@@ -107,11 +110,10 @@ public sealed class Windows1257 : Encoding
     /// <summary>
     /// Converts a Windows-1257 byte to a Unicode character.
     /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static char GetChar(byte b)
     {
-        if (decMap.TryGetValue(b, out var c))
-            return c;
-        return (char)b;
+        return byteToCharMap[b];
     }
 
     /// <inheritdoc/>

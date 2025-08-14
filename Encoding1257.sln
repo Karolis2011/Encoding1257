@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encoding1257.Benchmark", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encoding1257", "Encoding1257\Encoding1257.csproj", "{F5495272-D449-44C6-BB49-28F742A9E42A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encoding1257.CodeGen", "Encoding1257.CodeGen\Encoding1257.CodeGen.csproj", "{137FD094-495A-42CB-9DFE-3903D3BB067C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,18 @@ Global
 		{F5495272-D449-44C6-BB49-28F742A9E42A}.Release|x64.Build.0 = Release|Any CPU
 		{F5495272-D449-44C6-BB49-28F742A9E42A}.Release|x86.ActiveCfg = Release|Any CPU
 		{F5495272-D449-44C6-BB49-28F742A9E42A}.Release|x86.Build.0 = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|x64.Build.0 = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Debug|x86.Build.0 = Debug|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|x64.ActiveCfg = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|x64.Build.0 = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|x86.ActiveCfg = Release|Any CPU
+		{137FD094-495A-42CB-9DFE-3903D3BB067C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
