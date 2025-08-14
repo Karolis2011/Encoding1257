@@ -15,6 +15,7 @@ public class Encoding1257Benchmark
     private string _inputString = string.Empty;
     private char[] _inputChars = [];
     private byte[] _outputBytesBuffer = [];
+    private char[] _outputCharsBuffer = [];
 
     [Params(100, 1000, 10000)]
     public int Input { get; set; }
@@ -40,6 +41,7 @@ public class Encoding1257Benchmark
         _inputChars = _inputString.ToCharArray();
         // Worst case, 1 char = 1 byte for single-byte encodings
         _outputBytesBuffer = new byte[_inputChars.Length];
+        _outputCharsBuffer = new char[_inputChars.Length];
     }
 
     [Benchmark]
@@ -51,4 +53,8 @@ public class Encoding1257Benchmark
     [Benchmark]
     public int EncodeWithBuffer() =>
         Windows1257.Instance.GetBytes(_inputChars, 0, _inputChars.Length, _outputBytesBuffer, 0);
+
+    [Benchmark]
+    public int DecodeWithBuffer() =>
+        Windows1257.Instance.GetChars(_inputBytes, 0, _inputBytes.Length, _outputCharsBuffer, 0);
 }
