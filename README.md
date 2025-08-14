@@ -18,6 +18,7 @@ This library provides a fast, managed implementation of the Windows-1257 encodin
 ## Features
 
 - **High Performance**: Optimized implementation with aggressive inlining and efficient lookup tables
+- **Zero-Allocation Operations**: When using buffer-based methods (`GetBytes`/`GetChars` with pre-allocated buffers), no heap allocations occur
 - **Source Generation**: Uses Roslyn source generators to generate optimal encoding/decoding tables at compile time
 - **Zero Dependencies**: Pure .NET implementation with no external dependencies
 - **Thread Safe**: Singleton pattern ensures safe usage across multiple threads
@@ -57,7 +58,7 @@ string decoded = encoding.GetString(bytes);
 Encoding.RegisterProvider(Win1257EncodingProvider.Instance)
 
 // Use like any other encoding
-Encoding encoding = Windows1257.Instance;
+Encoding encoding = Encoding.GetEncoding(1257);
 var encoder = encoding.GetEncoder();
 var decoder = encoding.GetDecoder();
 ```
