@@ -41,7 +41,7 @@ public sealed partial class Windows1257 : Encoding
     /// <inheritdoc/>
     public override int GetByteCount(char[] chars, int index, int count)
     {
-        ArgumentNullException.ThrowIfNull(chars);
+        if (chars is null) throw new ArgumentNullException(nameof(chars));
         if (index < 0 || count < 0 || index + count > chars.Length) throw new ArgumentOutOfRangeException();
         return count;
     }
@@ -49,8 +49,8 @@ public sealed partial class Windows1257 : Encoding
     /// <inheritdoc/>
     public override int GetBytes(char[] chars, int charIndex, int charCount, byte[] bytes, int byteIndex)
     {
-        ArgumentNullException.ThrowIfNull(chars);
-        ArgumentNullException.ThrowIfNull(bytes);
+        if (chars is null) throw new ArgumentNullException(nameof(chars));
+        if (bytes is null) throw new ArgumentNullException(nameof(bytes));
         if (charIndex < 0 || charCount < 0 || charIndex + charCount > chars.Length) throw new ArgumentOutOfRangeException();
         if (byteIndex < 0 || byteIndex + charCount > bytes.Length) throw new ArgumentOutOfRangeException();
         for (int i = 0; i < charCount; i++)
@@ -61,7 +61,7 @@ public sealed partial class Windows1257 : Encoding
     /// <inheritdoc/>
     public override int GetCharCount(byte[] bytes, int index, int count)
     {
-        ArgumentNullException.ThrowIfNull(bytes);
+        if (bytes is null) throw new ArgumentNullException(nameof(bytes));
         if (index < 0 || count < 0 || index + count > bytes.Length) throw new ArgumentOutOfRangeException(nameof(index));
         return count;
     }
@@ -69,8 +69,8 @@ public sealed partial class Windows1257 : Encoding
     /// <inheritdoc/>
     public override int GetChars(byte[] bytes, int byteIndex, int byteCount, char[] chars, int charIndex)
     {
-        ArgumentNullException.ThrowIfNull(bytes);
-        ArgumentNullException.ThrowIfNull(chars);
+        if (bytes is null) throw new ArgumentNullException(nameof(bytes));
+        if (chars is null) throw new ArgumentNullException(nameof(chars));
         if (byteIndex < 0 || byteCount < 0 || byteIndex + byteCount > bytes.Length) throw new ArgumentOutOfRangeException(nameof(byteIndex));
         if (charIndex < 0 || charIndex + byteCount > chars.Length) throw new ArgumentOutOfRangeException(nameof(charIndex));
         for (int i = 0; i < byteCount; i++)
